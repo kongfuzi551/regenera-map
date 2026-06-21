@@ -1,0 +1,14 @@
+# Perfil de desarrollo local
+# PostgreSQL/PostGIS levantado vía docker-compose en localhost:5432
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/regeneramap
+    # Credenciales vía variables de entorno (con default cómodo para dev local)
+    username: ${DB_USERNAME:regeneramap}
+    password: ${DB_PASSWORD:regeneramap}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
